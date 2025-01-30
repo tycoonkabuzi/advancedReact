@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 import "./App.css";
-import Memorization from "./Memorization";
+import Memorization from "./components/Memorization";
 
 function App() {
   //const [count, setCount] = useState(0);
