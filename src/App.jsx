@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import "./App.css";
 import Memorization from "./components/Memorization";
 import Counter from "./components/Counter";
+import ToggleComponent from "./components/ToggleComponent";
 
 function App() {
   //const [count, setCount] = useState(0);
@@ -51,6 +52,7 @@ function App() {
       <br></br> */}
       <Memorization />
       <Counter />
+      <ToggleComponent />
     </>
   );
 }
