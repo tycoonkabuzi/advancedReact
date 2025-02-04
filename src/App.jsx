@@ -4,6 +4,10 @@ import "./App.css";
 import Memorization from "./components/Memorization";
 import Counter from "./components/Counter";
 import ToggleComponent from "./components/ToggleComponent";
+import { Link, Route, Routes } from "react-router";
+import Home from "./views/Home";
+import PostsList from "./views/PostsList";
+import SinglePost from "./views/SinglePost";
 
 function App() {
   //const [count, setCount] = useState(0);
@@ -49,10 +53,27 @@ function App() {
       <button onClick={startCounter}> Start Counter</button>
       <button onClick={endCounter}>End counter</button>
 
-      <br></br> */}
+      <br></br> 
+      
+      ---- this has to move out of the JS
       <Memorization />
       <Counter />
-      <ToggleComponent />
+     <ToggleComponent/>*/}
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/posts">Posts</Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route index element={<Home />}></Route>
+        <Route path="posts" element={<PostsList />}></Route>
+        <Route path="posts/:id" element={<SinglePost />}></Route>
+      </Routes>
     </>
   );
 }
