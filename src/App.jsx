@@ -41,6 +41,19 @@ function App() {
   //   intervalId.current = null;
   // };
 
+  const posts = [
+    {
+      id: 1,
+      title: "Post1",
+      text: "This is the first Post Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolore dicta porro laborum veniam magni fugiat dolorum aperiam possimus id itaque nostrum ipsa quasi autem, saepe sequi, dolorem quas eligendi? ",
+    },
+    {
+      id: 2,
+      title: "Post2",
+      text: "This is the first Post Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolore dicta porro laborum veniam magni fugiat dolorum aperiam possimus id itaque nostrum ipsa quasi autem, saepe sequi, dolorem quas eligendi? ",
+    },
+  ];
+
   return (
     <>
       {/* <h1> Hook - useRef</h1>
@@ -71,8 +84,8 @@ function App() {
       </nav>
       <Routes>
         <Route index element={<Home />}></Route>
-        <Route path="posts" element={<PostsList />}></Route>
-        <Route path="posts/:id" element={<SinglePost />}></Route>
+        <Route path="posts" element={<PostsList posts={posts} />} />
+        <Route path="posts/:postId" element={<SinglePost posts={posts} />} />
       </Routes>
     </>
   );

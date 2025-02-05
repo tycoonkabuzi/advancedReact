@@ -1,18 +1,6 @@
 import { Link } from "react-router";
 
-const Post = () => {
-  const posts = [
-    {
-      id: 1,
-      title: "Post1",
-      text: "This is the first Post Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolore dicta porro laborum veniam magni fugiat dolorum aperiam possimus id itaque nostrum ipsa quasi autem, saepe sequi, dolorem quas eligendi? ",
-    },
-    {
-      id: 2,
-      title: "Post2",
-      text: "This is the first Post Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolore dicta porro laborum veniam magni fugiat dolorum aperiam possimus id itaque nostrum ipsa quasi autem, saepe sequi, dolorem quas eligendi? ",
-    },
-  ];
+const Post = ({ posts }) => {
   return (
     <>
       <h2>Posts </h2>
