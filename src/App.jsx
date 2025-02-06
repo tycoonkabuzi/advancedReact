@@ -4,7 +4,7 @@ import "./App.css";
 import Memorization from "./components/Memorization";
 import Counter from "./components/Counter";
 import ToggleComponent from "./components/ToggleComponent";
-import { Link, Route, Routes } from "react-router";
+import { Link, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
 import PostsList from "./views/PostsList";
 import SinglePost from "./views/SinglePost";
@@ -82,6 +82,7 @@ function App() {
           </li>
         </ul>
       </nav>
+
       <Routes>
         <Route index element={<Home />}></Route>
         <Route path="posts" element={<PostsList posts={posts} />} />
