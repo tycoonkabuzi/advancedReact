@@ -1,4 +1,8 @@
-import { createSearchParams, useNavigate } from "react-router-dom";
+import {
+  createSearchParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -6,6 +10,8 @@ const Home = () => {
     page: 1,
     limit: 10,
   });
+  const [element] = useSearchParams();
+  console.log(element);
   const goToCallBack = () => {
     navigate(`/posts?${searchParams}`);
   };

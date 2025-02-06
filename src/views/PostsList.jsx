@@ -1,8 +1,12 @@
-import { Link } from "react-router";
+import { Link, useSearchParams } from "react-router";
 
 const Post = ({ posts }) => {
+  const [searchParams] = useSearchParams();
+  console.log(searchParams);
   return (
     <>
+      {" "}
+      page:{searchParams.get("page")}
       <h2>Posts </h2>
       {posts.map((post) => {
         return (

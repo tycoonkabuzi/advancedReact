@@ -8,6 +8,9 @@ import { Link, Route, Routes } from "react-router-dom";
 import Home from "./views/Home";
 import PostsList from "./views/PostsList";
 import SinglePost from "./views/SinglePost";
+import BaseLayout from "./layouts/BaseLayout";
+import ContactLayout from "./layouts/ContactLayout";
+import Contact from "./views/Contact";
 
 function App() {
   //const [count, setCount] = useState(0);
@@ -80,13 +83,22 @@ function App() {
           <li>
             <Link to="/posts">Posts</Link>
           </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
       </nav>
 
       <Routes>
-        <Route index element={<Home />}></Route>
-        <Route path="posts" element={<PostsList posts={posts} />} />
-        <Route path="posts/:postId" element={<SinglePost posts={posts} />} />
+        <Route path="/" element={<BaseLayout />}>
+          <Route index element={<Home />}></Route>
+          <Route path="posts" element={<PostsList posts={posts} />} />
+          <Route path="posts/:postId" element={<SinglePost posts={posts} />} />
+        </Route>
+
+        <Route path="/contact" element={<ContactLayout />}>
+          <Route index element={<Contact />} />
+        </Route>
       </Routes>
     </>
   );
