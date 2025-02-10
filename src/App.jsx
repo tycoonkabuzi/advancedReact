@@ -11,6 +11,7 @@ import SinglePost from "./views/SinglePost";
 import BaseLayout from "./layouts/BaseLayout";
 import ContactLayout from "./layouts/ContactLayout";
 import Contact from "./views/Contact";
+import AddPostForm from "./components/AddPostForm";
 
 function App() {
   //const [count, setCount] = useState(0);
@@ -88,19 +89,8 @@ function App() {
           </li>
         </ul>
       </nav>
-
+      <AddPostForm />
       <PostsList />
-      <Routes>
-        <Route path="/" element={<BaseLayout />}>
-          <Route index element={<Home />}></Route>
-          <Route path="posts" element={<PostsList posts={posts} />} />
-          <Route path="posts/:postId" element={<SinglePost posts={posts} />} />
-        </Route>
-
-        <Route path="/contact" element={<ContactLayout />}>
-          <Route index element={<Contact />} />
-        </Route>
-      </Routes>
     </>
   );
 }

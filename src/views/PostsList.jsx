@@ -4,8 +4,8 @@ import { Link, useSearchParams } from "react-router";
 
 const Post = () => {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState();
-  const [error, setError] = useState();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   console.log(posts);
 
   useEffect(() => {
