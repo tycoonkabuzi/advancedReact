@@ -89,6 +89,7 @@ function App() {
         </ul>
       </nav>
 
+      <PostsList />
       <Routes>
         <Route path="/" element={<BaseLayout />}>
           <Route index element={<Home />}></Route>
