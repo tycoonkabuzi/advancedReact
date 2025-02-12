@@ -12,6 +12,7 @@ import BaseLayout from "./layouts/BaseLayout";
 import ContactLayout from "./layouts/ContactLayout";
 import Contact from "./views/Contact";
 import AddPostForm from "./components/AddPostForm";
+import EditPost from "./components/EditPost";
 
 function App() {
   //const [count, setCount] = useState(0);
@@ -58,6 +59,8 @@ function App() {
     },
   ];
 
+  const [selectedPost, setSelectedPost] = useState(null);
+
   return (
     <>
       {/* <h1> Hook - useRef</h1>
@@ -90,7 +93,16 @@ function App() {
         </ul>
       </nav>
       <AddPostForm />
-      <PostsList />
+      {selectedPost && (
+        <EditPost
+          selectedPost={selectedPost}
+          updated={(updated) => {
+            console.log("This was updated:", updated);
+            setSelectedPost(null);
+          }}
+        />
+      )}
+      <PostsList setSelectedPost={setSelectedPost} />
     </>
   );
 }

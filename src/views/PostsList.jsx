@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useSearchParams } from "react-router";
 
-const Post = () => {
+const Post = ({ setSelectedPost }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -35,6 +35,7 @@ const Post = () => {
           <li>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
+            <button onClick={() => setSelectedPost(post)}>Edit</button>
             <hr />
           </li>
         ))}
