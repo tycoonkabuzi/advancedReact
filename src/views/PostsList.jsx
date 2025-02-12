@@ -6,7 +6,6 @@ const Post = ({ setSelectedPost }) => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  console.log(posts);
 
   useEffect(() => {
     axios
@@ -20,6 +19,13 @@ const Post = ({ setSelectedPost }) => {
         setLoading(false);
       });
   }, []);
+
+  const handleDelete = async (postId) => {
+    try {
+      axios.delete(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+      setPosts(posts.filter((post) => post.id != postId));
+    } catch (error) {}
+  };
 
   if (loading) {
     return <p>Loading</p>;
@@ -36,6 +42,7 @@ const Post = ({ setSelectedPost }) => {
             <h3>{post.title}</h3>
             <p>{post.body}</p>
             <button onClick={() => setSelectedPost(post)}>Edit</button>
+            <button onClick={() => handleDelete(post.id)}> Delete</button>
             <hr />
           </li>
         ))}
